@@ -1,5 +1,4 @@
-
-def filter_by_state(list_dict: list[dict], state: str = 'EXECUTED') -> list[dict]:
+def filter_by_state(list_dict: list[dict], state: str = "EXECUTED") -> list[dict]:
     """
     Принимает список словарей и опционально значение ключа,
     возвращает новый список словарей,
@@ -24,8 +23,8 @@ def sort_by_date(list_dict: list[dict], decrease: bool = True) -> list[dict]:
     sorted_list: list[dict] = []
 
     if decrease:
-        sorted_list = sorted(list_dict, key = lambda x: x['date'], reverse = True)
+        sorted_list = sorted(list_dict, key=lambda x: x["date"], reverse=True)
     else:
-        sorted_list = sorted(list_dict, key = lambda x: x['date'])
+        sorted_list = sorted(list_dict, key=lambda x: x["date"])
 
     return sorted_list
