@@ -23,7 +23,7 @@ def mask_account_card(card_or_account: str) -> str:
 
 
 def get_date(date_time: str) -> str:
-    """Получает строку даты и времени и возвращает строку с датой в формате : ДД.ММ.ГГГГ"""
+    """Получает строку даты и времени и возвращает строку с датой в формате: ДД.ММ.ГГГГ"""
 
     year: str = date_time[:4]
     month: str = date_time[5:7]
