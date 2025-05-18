@@ -26,3 +26,12 @@ git clone https://github.com/ellGoltso/widget_project.git
 # Выход функции, если вторым аргументов передано 'CANCELED'
 [{'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'}, {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}]
 ```
+
+## Тестирование:
+
+Проект покрыт тестами Pytest
+Для их запуска выполните команду:
+
+```commandline
+pytest --cov
+```

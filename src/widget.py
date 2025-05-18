@@ -1,10 +1,10 @@
-from src.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(card_or_account: str) -> str:
     """Принимает строку, содержащую тип и номер карты или счета и возвращает строку с замаскированным номером"""
 
-    if type(card_or_account) != str:
+    if not isinstance(card_or_account, str):
         raise AttributeError("Некорректный тип данных")
 
     card_or_account_type: str = ""
@@ -22,7 +22,7 @@ def mask_account_card(card_or_account: str) -> str:
     elif len(number) == 20:
         full_name_card_account += card_or_account_type + get_mask_account(int(number))
     else:
-        return ''
+        return ""
 
     return full_name_card_account
 
@@ -33,15 +33,15 @@ def get_date(date_time: str) -> str:
     if len(date_time) < 10:
         raise ValueError("Некорректный формат даты")
 
-    date_ = ''
+    date_ = ""
 
     for letter in date_time:
-        if letter == 'T':
+        if letter == "T":
             break
         date_ += letter
 
     for letter in date_:
-        if not letter.isdigit() and letter != '-':
+        if not letter.isdigit() and letter != "-":
             raise ValueError("Некорректный формат даты")
 
     year: str = date_[:4]

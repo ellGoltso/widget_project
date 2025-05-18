@@ -8,11 +8,8 @@ def test_filter_by_state(fixture_data, fixture_executed, fixture_canceled):
     assert filter_by_state(fixture_data) == fixture_executed
     assert filter_by_state(fixture_data, "CANCELED") == fixture_canceled
 
-@pytest.mark.parametrize('state, expected', [
-    ('canceled', []),
-    ('incorrect_state', [])
-])
 
+@pytest.mark.parametrize("state, expected", [("canceled", []), ("incorrect_state", [])])
 def test_filter_by_state_with_different_states(fixture_data, state, expected):
     assert filter_by_state(fixture_data, state) == expected
 
