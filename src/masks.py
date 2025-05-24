@@ -10,6 +10,9 @@ def get_mask_card_number(card_number: int) -> str:
 
     card_number_list.reverse()
 
+    if len(card_number_list) != 16:
+        return ""
+
     for i, v in enumerate(card_number_list):
         if 6 <= i <= 11:
             masked_card_number += "*"
@@ -22,4 +25,6 @@ def get_mask_card_number(card_number: int) -> str:
 def get_mask_account(account_number: int) -> str:
     """Функция принимает на вход номер счета и возвращает его маску."""
 
+    if len(str(account_number)) != 20:
+        return ""
     return "**" + str(account_number)[-4:]
