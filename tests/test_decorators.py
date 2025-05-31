@@ -14,7 +14,6 @@ def test_log(capsys):
     captured = capsys.readouterr()
     assert captured.out == "Start: my_function ok\n\nmy_function error: division by zero. Inputs: (10, 0), {}\n\n"
 
-
     @log("testlog.txt", "w")
     def test_function(x, y):
         return x + y
@@ -29,6 +28,8 @@ def test_log(capsys):
     with open("testlog.txt", "r", encoding="utf-8") as test_log:
         content = test_log.read()
 
-    assert content == ("Start: test_function ok\ntest_function error:"
-                       " can only concatenate str (not \"int\") to str. "
-                       "Inputs: ('one', 4), {}\n")
+    assert content == (
+        "Start: test_function ok\ntest_function error:"
+        ' can only concatenate str (not "int") to str. '
+        "Inputs: ('one', 4), {}\n"
+    )

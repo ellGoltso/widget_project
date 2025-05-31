@@ -90,6 +90,27 @@ for card_number in card_number_generator(1, 5):
     0000 0000 0000 0005
 ```
 
+Пример работы декоратора log:
+```
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
+
+Ожидаемый вывод в лог-файл mylog.txt при успешном выполнении:
+
+Start: my_function ok
+Finish: my_function ok
+
+Ожидаемый вывод при ошибке:
+
+my_function error: тип ошибки. Inputs: (1, 2), {}
+
+Где тип ошибки заменяется на текст ошибки.
+```
+
+
 ## Тестирование:
 
 Проект покрыт тестами Pytest
