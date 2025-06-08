@@ -1,11 +1,12 @@
 import json
 
+
 def get_data(path: str) -> list:
-    """ Принимает на вход путь до JSON-файла
-    и возвращает список словарей с данными """
+    """Принимает на вход путь до JSON-файла
+    и возвращает список словарей с данными"""
 
     try:
-        with open(path, encoding = 'utf-8') as f:
+        with open(path, encoding="utf-8") as f:
             data = json.load(f)
     except json.JSONDecodeError:
         return []

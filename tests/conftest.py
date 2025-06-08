@@ -4,38 +4,26 @@ import pytest
 @pytest.fixture
 def fixture_transaction_rub():
     return {
-    "id": 587085106,
-    "state": "EXECUTED",
-    "date": "2018-03-23T10:45:06.972075",
-    "operationAmount": {
-      "amount": "48223.05",
-      "currency": {
-        "name": "руб.",
-        "code": "RUB"
-      }
-    },
-    "description": "Открытие вклада",
-    "to": "Счет 41421565395219882431"
-  }
+        "id": 587085106,
+        "state": "EXECUTED",
+        "date": "2018-03-23T10:45:06.972075",
+        "operationAmount": {"amount": "48223.05", "currency": {"name": "руб.", "code": "RUB"}},
+        "description": "Открытие вклада",
+        "to": "Счет 41421565395219882431",
+    }
 
 
 @pytest.fixture
 def fixture_transaction_usd():
     return {
-    "id": 142264268,
-    "state": "EXECUTED",
-    "date": "2019-04-04T23:20:05.206878",
-    "operationAmount": {
-      "amount": "79114.93",
-      "currency": {
-        "name": "USD",
-        "code": "USD"
-      }
-    },
-    "description": "Перевод со счета на счет",
-    "from": "Счет 19708645243227258542",
-    "to": "Счет 75651667383060284188"
-  }
+        "id": 142264268,
+        "state": "EXECUTED",
+        "date": "2019-04-04T23:20:05.206878",
+        "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+        "description": "Перевод со счета на счет",
+        "from": "Счет 19708645243227258542",
+        "to": "Счет 75651667383060284188",
+    }
 
 
 @pytest.fixture
