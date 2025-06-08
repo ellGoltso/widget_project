@@ -1,6 +1,6 @@
 import json
 
-def get_data(path: str) -> list[dict]:
+def get_data(path: str) -> list:
     """ Принимает на вход путь до JSON-файла
     и возвращает список словарей с данными """
 
