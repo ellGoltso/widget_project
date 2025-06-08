@@ -15,7 +15,3 @@ def get_data(path: str) -> list:
     if isinstance(data, list):
         return data
     return []
-
-
-
-print(get_data("data/operations.json"))
