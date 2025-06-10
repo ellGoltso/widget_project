@@ -19,7 +19,7 @@ def get_mask_card_number(card_number: int) -> str:
         else:
             masked_card_number += str(v)
 
-    return " ".join(masked_card_number[i * 4: (i + 1) * 4] for i in range(4))
+    return " ".join(masked_card_number[i * 4 : (i + 1) * 4] for i in range(4))
 
 
 def get_mask_account(account_number: int) -> str:

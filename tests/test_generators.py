@@ -38,8 +38,8 @@ from src.generators import card_number_generator, filter_by_currency, transactio
         )
     ],
 )
-def test_filter_by_currency_usd(fixture_transaction, expected):
-    usd_generator = filter_by_currency(fixture_transaction, "USD")
+def test_filter_by_currency_usd(fixture_transactions, expected):
+    usd_generator = filter_by_currency(fixture_transactions, "USD")
     usd_transactions_list = []
     for _ in range(4):
         usd_transactions_list.append(next(usd_generator))
@@ -73,8 +73,8 @@ def test_filter_by_currency_usd(fixture_transaction, expected):
         )
     ],
 )
-def test_filter_by_currency_rub(fixture_transaction, expected):
-    rub_generator = filter_by_currency(fixture_transaction, "RUB")
+def test_filter_by_currency_rub(fixture_transactions, expected):
+    rub_generator = filter_by_currency(fixture_transactions, "RUB")
     rub_transactions_list = []
     for _ in range(3):
         rub_transactions_list.append(next(rub_generator))
@@ -82,8 +82,8 @@ def test_filter_by_currency_rub(fixture_transaction, expected):
     assert rub_transactions_list == list(expected)
 
 
-def test_invalid_currency(fixture_transaction):
-    generator = filter_by_currency(fixture_transaction, "invalid currency")
+def test_invalid_currency(fixture_transactions):
+    generator = filter_by_currency(fixture_transactions, "invalid currency")
 
     assert next(generator) is None
 
@@ -101,8 +101,8 @@ def test_invalid_currency(fixture_transaction):
         )
     ],
 )
-def test_transaction_descriptions(fixture_transaction, expected):
-    descriptions = transaction_descriptions(fixture_transaction)
+def test_transaction_descriptions(fixture_transactions, expected):
+    descriptions = transaction_descriptions(fixture_transactions)
 
     descriptions_list = []
     for _ in range(6):
